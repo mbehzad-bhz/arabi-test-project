@@ -6,9 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80" # Map port 80 in the container to port 8080 on the host
+      - "8080:80"
     volumes:
-      - .:/var/www/html
+      - .:/var/www/html # Sync host directory with container
     depends_on:
       - db
 
@@ -17,7 +17,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: mydatabase
+      MYSQL_DATABASE: main_db
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     ports:

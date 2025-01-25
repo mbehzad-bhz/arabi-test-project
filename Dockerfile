@@ -11,4 +11,4 @@ COPY . /var/www/html
 WORKDIR /var/www/html
 
 # Give write permissions for uploads and logs
-RUN chmod -R 777 /var/www/html/uploads
+RUN mkdir -p /var/www/html/uploads && chmod -R 777 /var/www/html/uploads
